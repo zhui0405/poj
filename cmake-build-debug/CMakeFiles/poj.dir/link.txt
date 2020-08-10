@@ -1,0 +1,3 @@
+"D:\program files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\poj.dir/objects.a
+D:\code\mingw64\mingw64\bin\ar.exe cr CMakeFiles\poj.dir/objects.a @CMakeFiles\poj.dir\objects1.rsp
+D:\code\mingw64\mingw64\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\poj.dir/objects.a -Wl,--no-whole-archive  -o poj.exe -Wl,--out-implib,libpoj.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\poj.dir\linklibs.rsp
