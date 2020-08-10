@@ -447,5 +447,7 @@ double fun(double x){
 int main(){
     int x,y,a,b,L;
     scanf("%d%d%d%d%d%d",&x,&y,&a,&b,&L);
-    if(x>y)
+    if(x>y){
+        a=b;
+    }
 }
