@@ -448,6 +448,6 @@ int main(){
     int x,y,a,b,L;
     scanf("%d%d%d%d%d%d",&x,&y,&a,&b,&L);
     if(x>y){
-        a=b;
+        a=b;b=x;
     }
 }
