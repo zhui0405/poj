@@ -442,12 +442,3 @@ double fun(double x){
     return 2*x*x*x-4*x*x+3*x-6;
 }*/
 
-//T024.羊羊聚会
-#include <stdio.h>
-int main(){
-    int x,y,z,a,b,L;
-    scanf("%d%d%d%d%d",&x,&y,&a,&b,&L);
-    if (y>x){
-        z=
-    }
-}
