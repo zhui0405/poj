@@ -323,7 +323,7 @@ int main(){
 
 
 /*
-//T012.整数位数
+//T013.整数位数
 #include <stdio.h>
 int main(){
     float a;
@@ -339,7 +339,7 @@ int main(){
     return 0;
 }*/
 
-/*//T013.多项式的猜想 某级数的前两项A1=1，A2=1，以后各项具有如下关系：
+/*//T014.多项式的猜想 某级数的前两项A1=1，A2=1，以后各项具有如下关系：
 //An=An-2+2An-1
 //要求依次对于整数M=100，1000和10000求出对应的n值，使其满足：Sn＜M且Sn+1≥M，这里Sn=A1+A2+…+An
 #include <stdio.h>
@@ -420,6 +420,58 @@ int main(){
 
 
 /*
+//T017.奇特的分数数列
+#include <stdio.h>
+int main(){
+    float a=2,b=1,c=0,f=2;
+
+    for (int i = 1;i<20;i++){   //循环得出每一个的值和数列和
+        c=a+b;
+        b=a;
+        a=c;
+        f+=a/b;
+    }
+    printf("%.6lf\n",f);
+    return 0;
+}*/
+
+/*
+//T018.迭代求根
+#include <stdio.h>
+#include <math.h>
+int main(){
+    float a=1,b=0;
+    int c;
+    scanf("%d",&c);
+    for (int i=1;;i++){
+        b=a;
+        a=0.5*(a+c/a);
+        if (fabs(a-b)<0.000001) {   //判断绝对值小于10^-5
+            printf("%lf", a);
+            break;
+        }
+        return 0;
+    }
+}*/
+
+/*
+//T019.最次方数
+#include <stdio.h>
+int main(){
+    __int64 x,a,b;
+    scanf("%lld%lld",&x,&a);
+    b=x;
+    for (int i=1;i<a;i++){  //硬循环，用64位int算最终值，另一种简单的办法是每次只需要每次循环只要最后三位，因为是乘法
+        b*=x;
+        printf("%lld\n",b);
+    }
+        printf("%lld",b%1000);
+
+    return 0;
+}*/
+
+
+/*
 //T020.二分法求根
 #include <stdio.h>
 double fun();
@@ -442,12 +494,79 @@ double fun(double x){
     return 2*x*x*x-4*x*x+3*x-6;
 }*/
 
-//T024.羊羊聚会
+/*
+//T021.子序列的和
 #include <stdio.h>
 int main(){
-    int x,y,a,b,L;
-    scanf("%d%d%d%d%d%d",&x,&y,&a,&b,&L);
-    if(x>y){
-        a=b;b=x;
+    int n,m;
+    float x,f=0;
+    scanf("%d%d",&n,&m);
+    for(int i=n;i<=m;i++){
+        x=i;
+        float l=1/(x*x);    //数据陷进，int型作为分母时该式值会失去精度值为0
+        printf("%lf,%lf\n",x,l);
+        f+=l;
     }
+    printf("%lf",f);
+    return 0;
+}*/
+
+/*//T022.解不等式
+#include <stdio.h>
+int main(){
+    int a,b,c=0;
+    float g=0,h=0;
+    scanf("%d%d",&a,&b);
+    for (int i=0;;i++){
+        c+=1;
+        float f=c;  //避免数据陷进，需要把int值类型转换为double型，否则后面计算得到的小数均会失去精度
+        g=g+1/f;
+        h+=1/g;
+        //printf("%d,%lf,%lf,%lf\n",c,f,g,h);
+        if (h>a&&h-1/g<=a)
+            printf("%d",c);
+        else if (h<b&&h+1/(g+1/(f+1))>b)
+            printf(" %d", c);
+        else if (h>b)
+            break;
+    }
+    return 0;
+}*/
+
+/*
+//T023.幸运数字7
+#include<stdio.h>
+int main(){
+    int n,m,o=0;
+    scanf("%d",&n);
+    for (int i=1;i<=n;i++){
+        m=i;
+        */
+/*if (i%7==0)   //方法1两步判断，先判断7的倍数再判断某位有7
+            printf("%d ",i);
+        else{*//*
+
+            for (int j = 0;j<5; j++) {  //方法2同时判断7的倍数或某位有7
+                o=m%10;
+                if (i%7==0||o==7){
+                    printf("%d ",i);
+                    break;
+                }
+                m=m/10;
+
+         //}
+     }
+    }
+    return 0;
+}*/
+
+//t024.羊羊聚会
+#include <stdio.h>
+#include <math.h>
+int main(){
+    int x,y,a,b,L;
+    scanf("%d%d%d%d%d",&x,&y,&a,&b,&L);
+
+
+}
 }
