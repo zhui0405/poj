@@ -564,9 +564,17 @@ int main(){
 #include <stdio.h>
 #include <math.h>
 int main(){
-    int x,y,a,b,L;
+    int x,y,a,b,L,sm,sf,i=0;
     scanf("%d%d%d%d%d",&x,&y,&a,&b,&L);
-
-
-}
+    if (x!=y&&a==b){
+        printf("impossible");
+    }
+    sm=x;
+    sf=y;
+    while (sm%5!=sf%5){
+        i++;
+        sm=sm+x;
+        sf=sf+y;
+    }
+    printf("%d",i);
 }
